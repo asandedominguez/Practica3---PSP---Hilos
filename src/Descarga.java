@@ -1,0 +1,47 @@
+import java.io.File;
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Descarga extends Thread{
+    int parada_random;
+
+    public Descarga(String meditacion) {
+        super(meditacion);
+        parada_random = ThreadLocalRandom.current().nextInt(100,500);
+    }
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i < 10; i++) {
+                Thread.sleep(parada_random);
+                tiempo_total += parada_random;
+                int calculo = (i + 1) * 10;
+                System.out.println("["+getName()+"] " + calculo + "%");
+            }
+            System.out.println("["+getName()+"] " + "Completado en " + tiempo_total + " ms");
+        }
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public int tiempo_total;
+
+    public int getTiempoTotal() {
+        return tiempo_total;
+    }
+
+    public static void main (String[] args) {
+        Descarga descarga = new Descarga("meditacion.mp4");
+        descarga.start();
+        try {
+            descarga.join();
+        }
+        catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        Thread.State estado = descarga.getState();
+        System.out.println("Todas las descargas an terminado");
+    }
+}
