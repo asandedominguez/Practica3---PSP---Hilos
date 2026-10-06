@@ -1,9 +1,15 @@
+import java.util.Scanner;
+
 public class GestorDescargas2 {
     public static void main(String[] args) {
         String[] archivos;
 
-        if (args.length > 0) {
-            archivos = args;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce los nombres (si no hay ninguno se utilizarán los predeterminados): ");
+        String nombres = scanner.nextLine().trim();
+
+        if (!nombres.isEmpty()) {
+            archivos = nombres.split("\\s+");
         } else {
             archivos = new String[]{
                     "cuarzos.png",
