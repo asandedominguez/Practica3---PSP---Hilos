@@ -1,5 +1,3 @@
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Monitor implements Runnable {
     public Descarga[] descarga;
 
@@ -21,8 +19,6 @@ public class Monitor implements Runnable {
         try {
 
             while (vivo()) {
-                Thread.sleep(500);
-
                 int contador = 0;
                 for (Descarga d: descarga) {
                     if (d.isAlive()) {
@@ -32,6 +28,7 @@ public class Monitor implements Runnable {
                 if (contador > 0) {
                     System.out.println("[MONITOR] Descargas en curso: " + contador);
                 }
+                Thread.sleep(500); // Muestra el estado primero y luego espera
             }
             System.out.println("[MONITOR] No queda ninguna descarga en curso");
         }
