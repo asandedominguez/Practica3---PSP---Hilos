@@ -28,7 +28,7 @@ public class Monitor implements Runnable {
                 if (contador > 0) {
                     System.out.println("[MONITOR] Descargas en curso: " + contador);
                 }
-                Thread.sleep(500); // Muestra el estado primero y luego espera
+                Thread.sleep(500); 
             }
             System.out.println("[MONITOR] No queda ninguna descarga en curso");
         }
