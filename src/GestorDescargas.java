@@ -7,6 +7,8 @@ public class GestorDescargas {
                 new Descarga("mantras.mp3"),
         };
 
+        long inicio = System.currentTimeMillis();
+
         for (Descarga d: descargas) {
             d.setName("Descarga-" + d.nombre);
             d.start();
@@ -22,8 +24,8 @@ public class GestorDescargas {
         }
         System.out.println("Todas las descargas han terminado.");
 
-        int real = Math.max(Math.max(descargas[0].getTiempoTotal(), descargas[1].getTiempoTotal()),
-                Math.max(descargas[2].getTiempoTotal(), descargas[3].getTiempoTotal()));
+        long fin = System.currentTimeMillis();
+        long real = fin - inicio;
 
         System.out.println("Tiempo real: " + real + " ms");
 
