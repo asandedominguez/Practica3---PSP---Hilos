@@ -1,13 +1,13 @@
 import java.io.File;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class Descarga extends Thread {
     int parada_random;
     public String nombre;
+    public Random n_random = new Random();
 
     public Descarga(String archivos) {
         super(archivos);
-        parada_random = ThreadLocalRandom.current().nextInt(100, 500);
         nombre = archivos;
 
     }
@@ -16,6 +16,13 @@ public class Descarga extends Thread {
     public void run() {
         try {
             for (int i = 0; i < 10; i++) {
+                int valor = n_random.nextInt(2);
+                if (valor == 0) {
+                    parada_random = 100;
+                } else {
+                    parada_random = 500;
+                }
+                
                 Thread.sleep(parada_random);
                 tiempo_total += parada_random;
                 int calculo = (i + 1) * 10;
