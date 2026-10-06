@@ -13,7 +13,7 @@ Math.max(descargas[2].getTiempoTotal(), descargas[3].getTiempoTotal()));
 
 ### Esto no seria correcto, ya que simplemente me daría el tiempo mas alto entre las ejecuciones, por tanto le pregunte a Gemini lo siguiente con este prompt:
 
-"Que instrucción de Threads puedo utilizar para calcular el tiempo real exacto en milisegundos que tarda un programa en ejecutarse"
+"Que instrucción puedo utilizar para calcular el tiempo real exacto en milisegundos que tarda un programa en ejecutarse, solo dime cual, no me hagas ningún código de ejemplo"
 
 ### Me dió la instrucción "System.currentTimeMillis()", que sirve para hacer eso exactamente, calcular el tiempo exacto que tarda un programa en ejecutarse de principio a fin, por eso en el código esta esta instrucción justo antes del start, para que  se ejecute justo antes del cominezo, y otra al final para que calcule el tiempo que tardo en terminarse el proceso. Por último hacemos una resta que nos dará el resultado total en milisegundos que tardo el programa en terminar con precisión.
 
