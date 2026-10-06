@@ -17,7 +17,7 @@ Math.max(descargas[2].getTiempoTotal(), descargas[3].getTiempoTotal()));
 
 ![36](/Capturas/36.png)
 
-### Me dió la instrucción "System.currentTimeMillis()", que sirve para hacer eso exactamente, calcular el tiempo exacto que tarda un programa en ejecutarse de principio a fin, por eso en el código esta esta instrucción justo antes del start, para que  se ejecute justo antes del cominezo, y otra al final para que calcule el tiempo que tardo en terminarse el proceso. Por último hacemos una resta que nos dará el resultado total en milisegundos que tardo el programa en terminar con precisión.
+### Me dió la instrucción "System.currentTimeMillis()", que sirve para hacer eso exactamente, calcular el tiempo que tarda un programa en ejecutarse de principio a fin, por eso en el código está esta instrucción justo antes del start, para que  se ejecute justo antes del cominezo, y otra vez al final para que calcule el tiempo que tardó en terminarse el proceso. Por último hacemos una resta que nos dará el resultado total en milisegundos que tardó el programa en terminar, dando así un resultado preciso.
 
 ## TABLA 
 
@@ -135,4 +135,4 @@ Estaremos creando un programa secuencial. iniciaremos el hilo e inmediatamente e
 
 ### LAS EXPLICACIONES DE QUE HACE CADA CLASE Y MÉTODO ESTÁN INTRODUCIDAS EN FORMA DE COMENTARIOS EN EL CÓDIGO
 
-### LA CLASE GestorDescargaaTotal NO LA EXPLICO YA QUE ES UNA COMBINACIÓN DE AMBAS, LAS CUALES, COMO YA E DICHO, ESTÁN EXPLICADAS
+### LA CLASE GestorDescargaTotal NO LA EXPLICO YA QUE ES UNA COMBINACIÓN DE AMBAS, LAS CUALES, COMO YA E DICHO, ESTÁN EXPLICADAS
