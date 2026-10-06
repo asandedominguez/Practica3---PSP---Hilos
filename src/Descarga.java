@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.Random;
 
 public class Descarga extends Thread {
@@ -9,6 +8,7 @@ public class Descarga extends Thread {
     public Descarga(String archivos) {
         super(archivos);
         nombre = archivos;
+        parada_random = n_random.nextInt(401) + 100;
 
     }
 
@@ -16,13 +16,6 @@ public class Descarga extends Thread {
     public void run() {
         try {
             for (int i = 0; i < 10; i++) {
-                int valor = n_random.nextInt(2);
-                if (valor == 0) {
-                    parada_random = 100;
-                } else {
-                    parada_random = 500;
-                }
-                
                 Thread.sleep(parada_random);
                 tiempo_total += parada_random;
                 int calculo = (i + 1) * 10;
